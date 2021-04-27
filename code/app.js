@@ -63,7 +63,12 @@ pineappleButton.innerHTML = 'pineapple';
 let bakeButton = document.createElement('button');
 bakeButton.innerHTML = 'Bake';
 
+let playerOneScoreRecap = document.createElement('h2')
+// playerOneScoreRecap.innerText = `${playerOne.value} made ${playerOneCurrentScore} pizzas. Now it's your turn, ${playerTwo.value}. Do you have what it takes to be the champion?`
 
+let startGameUserTwo = document.createElement('button');
+startGameUserTwo.setAttribute('id', 'advance-player-Two')
+startGameUserTwo.innerHTML = 'Start Game';
 
 // HELPER FUNCTIONS
 
@@ -126,9 +131,31 @@ function timeLower(){
     timer.innerText = `Time: ${timeRemaining}`;
 }
 
-// Callback function for set Timeout - clear interval timer
+// Callback function for set Timeout - clear interval timer, remove buttons, add text and new buttons
 function timesUp (){
-    clearInterval(myTimer)
+    clearInterval(myTimer);
+    game.removeChild(doughButton);
+    game.removeChild(cheeseButton);
+    game.removeChild(sauceButton);
+    game.removeChild(pepperoniButton);
+    game.removeChild(sausageButton);
+    game.removeChild(pepperButton);
+    game.removeChild(garlicButton);
+    game.removeChild(onionButton);
+    game.removeChild(tomatoButton);
+    game.removeChild(basilButton);
+    game.removeChild(baconButton);
+    game.removeChild(hamButton);
+    game.removeChild(mushroomButton);
+    game.removeChild(pineappleButton);
+    game.removeChild(bakeButton);
+    pizzaType.innerText = '';
+    ingredientList.innerText = '';
+    timer.innerText = '';
+    // let playerOneScoreRecap = document.createElement('h2')
+    playerOneScoreRecap.innerText = `${playerOne.value} made ${playerOneCurrentScore} pizzas. Now it's your turn, ${playerTwo.value}. Do you have what it takes to be the champion?`
+    game.append(playerOneScoreRecap);
+    game.append(startGameUserTwo);
 }
 
 // compare pizza created by user to pizza array given. add score to player 1
@@ -147,10 +174,16 @@ function playerOneBake() {
         pizzaArray.sample();
 
     } else {
-        alert('Try Again')
+        pizzaType.innerText = ':('
+        ingredientList.innerText = "Sorry, that's the wrong pizza. Try again"
+        setTimeout(wrongPizzaReset, 1500)
         userArray = [];
         compareArray = [];
     }
+}
+
+function wrongPizzaReset(){
+    pizzaArray.sample();
 }
 
 // Function for displaying requested pizza name and ingredients
