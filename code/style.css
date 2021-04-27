@@ -28,6 +28,15 @@ body {
                           "btm-left btm-center btm-right";
 }
 
+#player-one-score, #player-two-score {
+  color: #f4f5f0;
+  font-family: 'Monoton', cursive;
+}
+
+#timer, #pizza-type {
+  font-family: 'Monoton', cursive;
+}
+
 #top-left, #top-right, #btm-left, #btm-right, #game {
     display: flex;
     flex-direction: column;
@@ -67,7 +76,7 @@ body {
   
   
   #btm-center {
-    grid-area: btm-right;
+    grid-area: btm-center;
  
   }
 

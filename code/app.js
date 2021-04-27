@@ -9,6 +9,8 @@ const startButtonPlayerOne = document.getElementById('advance-player-one');
 const playerOneScore = document.getElementById('player-one-score');
 const playerTwoScore = document.getElementById('player-two-score');
 const timer = document.getElementById('timer');
+const pizzaType = document.getElementById('pizza-type')
+const ingredientList = document.getElementById('ingredient-list');
 
 
 // Variables to be Changed
@@ -16,6 +18,7 @@ let playerOneCurrentScore = 0;
 let playerTwoCurrentScore = 0;
 let userArray = [];
 let randPizza = [];
+let timeRemaining = 60;
 
 // DOM Assets
 let startGameUserOne = document.createElement('button');
@@ -60,11 +63,11 @@ pineappleButton.innerHTML = 'pineapple';
 let bakeButton = document.createElement('button');
 bakeButton.innerHTML = 'Bake';
 
-timeRemaining = 60;
-// timer.innerHTML = `Time: ${timeRemaining}`;
 
-// Helper Functions
 
+// HELPER FUNCTIONS
+
+// Remove Start Screen Form & Title
 function instructionSequence (){
     game.removeChild(form);
     game.removeChild(introTitle);
@@ -76,7 +79,8 @@ function instructionSequence (){
 
 }
 
-function startGameplay (){
+// Start Gameplay for Player One - Remove instructions & start button, put in gameplay buttons
+function startGameplayPlayerOne (){
     game.removeChild(instructHeader);
     game.removeChild(gameInstructions);
     game.removeChild(startGameUserOne)
@@ -97,50 +101,46 @@ function startGameplay (){
     game.append(bakeButton);
     pizzaArray.sample();
     countdownTimer();
+
 }
 
-
+// Choose Random Pizza - Run displayPizzaType to update name & ingredients list
 Array.prototype.sample = function(){
     randPizza = this[Math.floor(Math.random()*this.length)];
     console.log(randPizza);
+    displayPizzaType();
   }
 
+// Run Countdown Timer - Set time to 60, Run set interval every 1 second, timeout after 60 seconds
 function countdownTimer(){
-    timer.innerHTML = `Time: ${timeRemaining}`;
+    timer.innerText = `Time: ${timeRemaining}`;
     myTimer = setInterval(timeLower, 1000);
     setTimeout(timesUp, 60000);
-
 }
 
+// Callback function for set interval - takes time down by 1 and updates screen with new time
 function timeLower(){
+    // console.log('interval working')
+    // console.log(timeRemaining);
     timeRemaining-=1;
-    console.log('interval working')
+    timer.innerText = `Time: ${timeRemaining}`;
 }
 
+// Callback function for set Timeout - clear interval timer
 function timesUp (){
     clearInterval(myTimer)
 }
 
-// Event Listeners
-
-form.addEventListener('submit', function(e){
-    e.preventDefault();
-    playerOneScore.innerHTML = `${playerOne.value}: ${playerOneCurrentScore} Pizzas`;
-    playerTwoScore.innerHTML = `${playerTwo.value}: ${playerTwoCurrentScore} Pizzas`;
-    let playerTwoName = playerTwo.value;
-    console.log('form submitted')
-    // game.removeChild(introTitle);
-    // game.removeChild(form);
-    // game.removeChild(introTitle);
-    // console.log(playerOneName, playerTwoName)
-    instructionSequence();
-})
-
-bakeButton.addEventListener('click', function(){
+// compare pizza created by user to pizza array given. add score to player 1
+function playerOneBake() {
     compareArray = userArray.sort();
     if (compareArray.length === randPizza.length && compareArray.every(function(value, index) { return value === randPizza[index]})
     ){
-        alert('Nice Pizza')
+        playerOneCurrentScore++;
+        playerOneScore.innerHTML = `${playerOne.value}: ${playerOneCurrentScore} Pizzas`;
+        // playerTwoScore.innerHTML = `${playerTwo.value}: ${playerTwoCurrentScore} Pizzas`;
+        
+        pizzaType.innerText = '';
         userArray = [];
         compareArray = [];
         randPizza =[];
@@ -151,12 +151,72 @@ bakeButton.addEventListener('click', function(){
         userArray = [];
         compareArray = [];
     }
+}
+
+// Function for displaying requested pizza name and ingredients
+function displayPizzaType(){
+    if (pizzaArray.indexOf(randPizza) === 0){
+        pizzaType.innerText = 'Cheese';
+        ingredientList.innerText = 'Dough, Sauce, Cheese';
+    } else if (pizzaArray.indexOf(randPizza) === 1){
+        pizzaType.innerText = 'Pepperoni';
+        ingredientList.innerText = 'Dough, Sauce, Cheese, Pepperoni';
+    } else if (pizzaArray.indexOf(randPizza) === 2){
+        pizzaType.innerText = 'Sausage & Peppers';
+        ingredientList.innerText = 'Dough, Sauce, Cheese, Sausage, Peppers';
+    } else if (pizzaArray.indexOf(randPizza) === 3){
+        pizzaType.innerText = 'Breathmint';
+        ingredientList.innerText = 'Dough, Sauce, Cheese, Garlic, Onion';
+    } else if (pizzaArray.indexOf(randPizza) === 4){
+        pizzaType.innerText = 'Margherita';
+        ingredientList.innerText = 'Dough, Sauce, Cheese, Basil, Garlic, Tomato';
+    } else if (pizzaArray.indexOf(randPizza) === 5){
+        pizzaType.innerText = 'Meat Lovers';
+        ingredientList.innerText = 'Dough, Sauce, Cheese, Sausage, Pepperoni, Bacon, Ham';
+    } else if (pizzaArray.indexOf(randPizza) === 6){
+        pizzaType.innerText = 'Veggie';
+        ingredientList.innerText = 'Dough, Sauce, Cheese, Mushroom, Onion, Peppers, Tomato';
+    } else if (pizzaArray.indexOf(randPizza) === 7){
+        pizzaType.innerText = 'White';
+        ingredientList.innerText = 'Dough, Cheese, Basil, Tomato, Garlic';
+    } else if (pizzaArray.indexOf(randPizza) === 8){
+        pizzaType.innerText = 'Vegan';
+        ingredientList.innerText = 'Dough, Sauce, Basil, Tomato, Mushroom, Onion, Pepper';
+    } else if (pizzaArray.indexOf(randPizza) === 9){
+        pizzaType.innerText = 'Hawaiian';
+        ingredientList.innerText = 'Dough, Sauce, Cheese, Ham, Pineapple';
+    } 
+
+}
+
+// Event Listeners
+
+// Event listener on form submit - places player names in top left and right, runs introduction function
+form.addEventListener('submit', function(e){
+    e.preventDefault();
+    playerOneScore.innerHTML = `${playerOne.value}`
+    playerTwoScore.innerHTML = `${playerTwo.value}`;
+    let playerTwoName = playerTwo.value;
+    console.log('form submitted')
+    // game.removeChild(introTitle);
+    // game.removeChild(form);
+    // game.removeChild(introTitle);
+    // console.log(playerOneName, playerTwoName)
+    instructionSequence();
 })
 
+// Runs on click of bake button when player submits pizza for judgement - function Player One Bake
+bakeButton.addEventListener('click', function(){
+    playerOneBake();
+})
+
+// Starts Gameplay for Player 1 - adding ingredients and bake button through function
 startGameUserOne.addEventListener('click', function(){
-    startGameplay();
+    startGameplayPlayerOne();
 
 })
+
+// Ingredient Buttons - add ingredient to array when clicked
 
 doughButton.addEventListener('click', function(){
     doughClick();
