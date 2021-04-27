@@ -60,11 +60,19 @@ mushroomButton.innerHTML = 'mushroom';
 let pineappleButton = document.createElement('button');
 pineappleButton.innerHTML = 'pineapple';
 
-let bakeButton = document.createElement('button');
-bakeButton.innerHTML = 'Bake';
+let bakeButtonUserOne = document.createElement('button');
+bakeButtonUserOne.innerHTML = 'Bake';
+
+let bakeButtonUserTwo = document.createElement('button');
+bakeButtonUserTwo.innerHTML = 'Bake';
+
+let playAgainButton = document.createElement('button');
+playAgainButton.innerHTML = 'Play Again';
 
 let playerOneScoreRecap = document.createElement('h2')
 // playerOneScoreRecap.innerText = `${playerOne.value} made ${playerOneCurrentScore} pizzas. Now it's your turn, ${playerTwo.value}. Do you have what it takes to be the champion?`
+
+let endGameMessage = document.createElement('h2');
 
 let startGameUserTwo = document.createElement('button');
 startGameUserTwo.setAttribute('id', 'advance-player-Two')
@@ -103,9 +111,35 @@ function startGameplayPlayerOne (){
     game.append(hamButton);
     game.append(mushroomButton);
     game.append(pineappleButton);
-    game.append(bakeButton);
+    game.append(bakeButtonUserOne);
     pizzaArray.sample();
-    countdownTimer();
+    countdownTimerPlayerOne();
+
+}
+
+// Start Gameplay for Player Two - Remove instructions & start button, put in gameplay buttons
+
+function startGameplayPlayerTwo (){
+    game.removeChild(playerOneScoreRecap);
+    game.removeChild(startGameUserTwo);
+    game.append(doughButton);
+    game.append(cheeseButton);
+    game.append(sauceButton);
+    game.append(pepperoniButton);
+    game.append(sausageButton);
+    game.append(pepperButton);
+    game.append(garlicButton);
+    game.append(onionButton);
+    game.append(tomatoButton);
+    game.append(basilButton);
+    game.append(baconButton);
+    game.append(hamButton);
+    game.append(mushroomButton);
+    game.append(pineappleButton);
+    game.append(bakeButtonUserTwo);
+    timeRemaining = 60;
+    pizzaArray.sample();
+    countdownTimerPlayerTwo();
 
 }
 
@@ -117,10 +151,10 @@ Array.prototype.sample = function(){
   }
 
 // Run Countdown Timer - Set time to 60, Run set interval every 1 second, timeout after 60 seconds
-function countdownTimer(){
+function countdownTimerPlayerOne(){
     timer.innerText = `Time: ${timeRemaining}`;
     myTimer = setInterval(timeLower, 1000);
-    setTimeout(timesUp, 60000);
+    setTimeout(timesUpPlayerOne, 60000);
 }
 
 // Callback function for set interval - takes time down by 1 and updates screen with new time
@@ -132,7 +166,7 @@ function timeLower(){
 }
 
 // Callback function for set Timeout - clear interval timer, remove buttons, add text and new buttons
-function timesUp (){
+function timesUpPlayerOne (){
     clearInterval(myTimer);
     game.removeChild(doughButton);
     game.removeChild(cheeseButton);
@@ -148,7 +182,7 @@ function timesUp (){
     game.removeChild(hamButton);
     game.removeChild(mushroomButton);
     game.removeChild(pineappleButton);
-    game.removeChild(bakeButton);
+    game.removeChild(bakeButtonUserOne);
     pizzaType.innerText = '';
     ingredientList.innerText = '';
     timer.innerText = '';
@@ -157,6 +191,53 @@ function timesUp (){
     game.append(playerOneScoreRecap);
     game.append(startGameUserTwo);
 }
+
+
+// Run Countdown Timer - Set time to 60, Run set interval every 1 second, timeout after 60 seconds
+function countdownTimerPlayerTwo(){
+    timer.innerText = `Time: ${timeRemaining}`;
+    myTimer = setInterval(timeLower, 1000);
+    setTimeout(timesUpPlayerTwo, 60000);
+}
+
+// Callback function for set Timeout - clear interval timer, remove buttons, add text and new buttons
+function timesUpPlayerTwo (){
+    clearInterval(myTimer);
+    game.removeChild(doughButton);
+    game.removeChild(cheeseButton);
+    game.removeChild(sauceButton);
+    game.removeChild(pepperoniButton);
+    game.removeChild(sausageButton);
+    game.removeChild(pepperButton);
+    game.removeChild(garlicButton);
+    game.removeChild(onionButton);
+    game.removeChild(tomatoButton);
+    game.removeChild(basilButton);
+    game.removeChild(baconButton);
+    game.removeChild(hamButton);
+    game.removeChild(mushroomButton);
+    game.removeChild(pineappleButton);
+    game.removeChild(bakeButtonUserTwo);
+    pizzaType.innerText = '';
+    ingredientList.innerText = '';
+    timer.innerText = '';
+    // let playerOneScoreRecap = document.createElement('h2')
+    determineWinner(playerOneCurrentScore, playerTwoCurrentScore);
+    game.append(playAgainButton);
+}
+
+// compare scores and generate proper winner message
+function determineWinner(score1, score2){
+    if (score1 > score2){
+        endGameMessage.innerText = `With a grand total of ${score1} pizzas, ${playerOne.value} wins. Congrats ${playerOne.value}!`;
+    } else if (score1 < score2) {
+        endGameMessage.innerText = `With a grand total of ${score2} pizzas, ${playerTwo.value} wins. Congrats ${playerTwo.value}!`;
+    } else if (score1 == score2){
+        endGameMessage.innerText = `It's a tie! Play again to determine the true champion`;
+    }
+    game.append(endGameMessage);
+}
+
 
 // compare pizza created by user to pizza array given. add score to player 1
 function playerOneBake() {
@@ -168,21 +249,47 @@ function playerOneBake() {
         // playerTwoScore.innerHTML = `${playerTwo.value}: ${playerTwoCurrentScore} Pizzas`;
         
         pizzaType.innerText = '';
+        ingredientList.innerText = "Nice pizza, how about another?"
+        setTimeout(PizzaReset, 1000)
         userArray = [];
         compareArray = [];
         randPizza =[];
-        pizzaArray.sample();
 
     } else {
         pizzaType.innerText = ':('
         ingredientList.innerText = "Sorry, that's the wrong pizza. Try again"
-        setTimeout(wrongPizzaReset, 1500)
+        setTimeout(PizzaReset, 1500)
         userArray = [];
         compareArray = [];
     }
 }
 
-function wrongPizzaReset(){
+// compare pizza created by user to pizza array given. add score to player 2
+function playerTwoBake() {
+    compareArray = userArray.sort();
+    if (compareArray.length === randPizza.length && compareArray.every(function(value, index) { return value === randPizza[index]})
+    ){
+        playerTwoCurrentScore++;
+        playerTwoScore.innerHTML = `${playerTwo.value}: ${playerTwoCurrentScore} Pizzas`;
+        
+        pizzaType.innerText = '';
+        ingredientList.innerText = "Nice pizza, how about another?"
+        setTimeout(PizzaReset, 1000)
+        userArray = [];
+        compareArray = [];
+        randPizza =[];
+
+    } else {
+        pizzaType.innerText = ':('
+        ingredientList.innerText = "Sorry, that's the wrong pizza. Try again"
+        setTimeout(PizzaReset, 1500)
+        userArray = [];
+        compareArray = [];
+    }
+}
+
+
+function PizzaReset(){
     pizzaArray.sample();
 }
 
@@ -222,6 +329,20 @@ function displayPizzaType(){
 
 }
 
+// function to reset screen to default
+function playAgain(){
+    playerOne.value = '';
+    playerOneScore.innerText = '';
+    playerOneCurrentScore = 0;
+    playerTwo.value = '';
+    playerTwoScore.innerText = '';
+    playerTwoCurrentScore = 0;
+    game.remove(endGameMessage);
+    game.remove(playAgainButton);
+    game.appendChild(introTitle);
+    game.appendChild(form);
+}
+
 // Event Listeners
 
 // Event listener on form submit - places player names in top left and right, runs introduction function
@@ -239,14 +360,29 @@ form.addEventListener('submit', function(e){
 })
 
 // Runs on click of bake button when player submits pizza for judgement - function Player One Bake
-bakeButton.addEventListener('click', function(){
+bakeButtonUserOne.addEventListener('click', function(){
     playerOneBake();
+})
+
+bakeButtonUserTwo.addEventListener('click', function(){
+    playerTwoBake();
 })
 
 // Starts Gameplay for Player 1 - adding ingredients and bake button through function
 startGameUserOne.addEventListener('click', function(){
     startGameplayPlayerOne();
 
+})
+
+// Starts Gameplay for Player 1 - adding ingredients and bake button through function
+startGameUserTwo.addEventListener('click', function(){
+    startGameplayPlayerTwo();
+
+})
+
+// Play Again
+playAgainButton.addEventListener('click', function(){
+    playAgain();
 })
 
 // Ingredient Buttons - add ingredient to array when clicked
