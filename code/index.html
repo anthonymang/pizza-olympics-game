@@ -14,19 +14,21 @@
         <aside id="top-left"><h2 id="player-one-score"></h2></aside>
         <aside id="top-center"><h1 id="game-title">Pizza Olympics</h1></aside>
         <aside id="top-right"><h2 id="player-two-score"></h2></aside>
-        <aside id = 'game-left'></aside>
+        
+        <aside id = 'game-left'><label for="PizzaChef1">Pizza Chef 1:</label>
+            <input type="text" placeholder='Name' name="PizzaChef1" id="pizza-chef-1" maxlength="10"></aside>
         <main id='game'>
-            <h1 id='intro-title'>Welcome to the Pizza Olympics</h1>
-            <form id='form'>
-            <label for="PizzaChef1">Pizza Chef 1 Name:</label>
-            <input type="text" name="PizzaChef1" id="pizza-chef-1" maxlength="10">
-            <label for="PizzaChef2">Pizza Chef 2 Name:</label>
-            <input type="text" name="PizzaChef2" id="pizza-chef-2" maxlength="10">
+            <h1 id='intro-title'>Welcome to the<br>Pizza Olympics</h1>
+            
+            
+            
             <input type="submit" value="Start Game" id='start-button'>
-        </form>
+        
         
     </main>
-        <aside id='game-right'></aside> 
+        <aside id='game-right'><label for="PizzaChef2">Pizza Chef 2:</label>
+            <input type="text" placeholder='Name' name="PizzaChef2" id="pizza-chef-2" maxlength="10"></aside> 
+
         <aside id="btm-left"><h2 id='pizza-type'></h2></aside>
         <aside id="btm-center"><h4 id='ingredient-list'></h4></aside>
         <aside id="btm-right"><h2 id="timer"></h2></aside>

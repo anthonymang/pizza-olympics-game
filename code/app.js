@@ -13,6 +13,7 @@ const playerTwoScore = document.getElementById('player-two-score');
 const timer = document.getElementById('timer');
 const pizzaType = document.getElementById('pizza-type')
 const ingredientList = document.getElementById('ingredient-list');
+const startButton = document.getElementById('start-button')
 
 
 // Variables to be Changed
@@ -33,11 +34,12 @@ let gameInstructions = document.createElement('p');
 gameInstructions.innerHTML = "Welcome to the Pizza Olympics. In today's game, two Pizza Chefs will square off to make as many pizzas as they can in one minute. Every pizza's ingredients and toppings must match the recipe exactly. Press the corresponding ingredient button to add it to the pizza. When your pizza has all the right toppings, hit the deliver button to submit it for Pizza Olympic inspection. If the pizza is the correct recipe, it will be added to your total tally. But be careful, chefs. If you mess up a pizza you will have to start the recipe from scratch. The Pizza Chef who makes the most pizzas in one minute will be crowned champion. When you're ready to start, click the button below.";
 gameInstructions.style.margin = '0px 10px';
 
-let doughButton = document.createElement('button');
-doughButton.setAttribute('class', 'ingredient-button')
-doughButton.innerHTML = 'dough';
-doughButton.style.height ='50px'
-doughButton.style.width ='50px';
+let anchovyButton = document.createElement('button');
+anchovyButton.setAttribute('class', 'ingredient-button')
+anchovyButton.style.height ='50px'
+anchovyButton.style.width ='50px';
+anchovyButton.style.backgroundImage = "url('../icon-imgs/anchovies-icon.png')"; 
+anchovyButton.style.backgroundSize = '100%';
 
 let cheeseButton = document.createElement('button');
 cheeseButton.setAttribute('class', 'ingredient-button')
@@ -134,33 +136,138 @@ pineappleButton.style.backgroundSize = '100%';
 
 let bakeButtonUserOne = document.createElement('button');
 bakeButtonUserOne.innerHTML = 'Bake';
+bakeButtonUserOne.style.position = 'absolute';
+bakeButtonUserOne.style.top = '75%'
+bakeButtonUserOne.style.left = '50%'
+bakeButtonUserOne.style.transform = 'translate(-50%, -50%)'
+bakeButtonUserOne.style.height = '40px'
+bakeButtonUserOne.style.width = '100px';
+// bakeButtonUserOne.style.fontFamily = "'Monoton', cursive";
+bakeButtonUserOne.style.fontSize = '30px';
+bakeButtonUserOne.style.borderRadius = '10px';
 
 let bakeButtonUserTwo = document.createElement('button');
 bakeButtonUserTwo.innerHTML = 'Bake';
+bakeButtonUserTwo.style.position = 'absolute';
+bakeButtonUserTwo.style.top = '75%'
+bakeButtonUserTwo.style.left = '50%'
+bakeButtonUserTwo.style.transform = 'translate(-50%, -50%)'
+bakeButtonUserTwo.style.height = '40px'
+bakeButtonUserTwo.style.width = '100px';
+// bakeButtonUserTwo.style.fontFamily = "'Monoton', cursive";
+bakeButtonUserTwo.style.fontSize = '30px';
+bakeButtonUserTwo.style.borderRadius = '10px';
 
 let playAgainButton = document.createElement('button');
 playAgainButton.innerHTML = 'Play Again';
 
+// Pizza Images
+
 let pizzaDough = document.createElement('img')
 pizzaDough.src = '../pizza-assets/dough-base.png'
 pizzaDough.style.position = 'absolute';
-pizzaDough.style.top = '40%';
+pizzaDough.style.top = '50%';
 pizzaDough.style.left = '50%';
 pizzaDough.style.transform = 'translate(-50%, -50%)'
 
 let pizzaSauce = document.createElement('img')
 pizzaSauce.src = '../pizza-assets/sauce.png';
 pizzaSauce.style.position = 'absolute';
-pizzaSauce.style.top = '40%';
+pizzaSauce.style.top = '50%';
 pizzaSauce.style.left = '50%';
 pizzaSauce.style.transform = 'translate(-50%, -50%)'
 
 let cheeseImg = document.createElement('img')
 cheeseImg.src = '../pizza-assets/cheese.png';
 cheeseImg.style.position = 'absolute';
-cheeseImg.style.top = '40%';
+cheeseImg.style.top = '50%';
 cheeseImg.style.left = '50%';
 cheeseImg.style.transform = 'translate(-50%, -50%)'
+
+let pepperoniImg = document.createElement('img')
+pepperoniImg.src = '../pizza-assets/pepperoni.png';
+pepperoniImg.style.position = 'absolute';
+pepperoniImg.style.top = '50%';
+pepperoniImg.style.left = '50%';
+pepperoniImg.style.transform = 'translate(-50%, -50%)';
+
+let sausageImg = document.createElement('img')
+sausageImg.src = '../pizza-assets/sausage.png';
+sausageImg.style.position = 'absolute';
+sausageImg.style.top = '50%';
+sausageImg.style.left = '50%';
+sausageImg.style.transform = 'translate(-50%, -50%)';
+
+let pepperImg = document.createElement('img')
+pepperImg.src = '../pizza-assets/pepper.png';
+pepperImg.style.position = 'absolute';
+pepperImg.style.top = '50%';
+pepperImg.style.left = '50%';
+pepperImg.style.transform = 'translate(-50%, -50%)';
+
+let garlicImg = document.createElement('img')
+garlicImg.src = '../pizza-assets/garlic.png';
+garlicImg.style.position = 'absolute';
+garlicImg.style.top = '50%';
+garlicImg.style.left = '50%';
+garlicImg.style.transform = 'translate(-50%, -50%)';
+
+let onionImg = document.createElement('img')
+onionImg.src = '../pizza-assets/onion.png';
+onionImg.style.position = 'absolute';
+onionImg.style.top = '50%';
+onionImg.style.left = '50%';
+onionImg.style.transform = 'translate(-50%, -50%)';
+
+let tomatoImg = document.createElement('img')
+tomatoImg.src = '../pizza-assets/tomato.png';
+tomatoImg.style.position = 'absolute';
+tomatoImg.style.top = '50%';
+tomatoImg.style.left = '50%';
+tomatoImg.style.transform = 'translate(-50%, -50%)';
+
+let basilImg = document.createElement('img')
+basilImg.src = '../pizza-assets/basil.png';
+basilImg.style.position = 'absolute';
+basilImg.style.top = '50%';
+basilImg.style.left = '50%';
+basilImg.style.transform = 'translate(-50%, -50%)';
+
+let baconImg = document.createElement('img')
+baconImg.src = '../pizza-assets/bacon.png';
+baconImg.style.position = 'absolute';
+baconImg.style.top = '50%';
+baconImg.style.left = '50%';
+baconImg.style.transform = 'translate(-50%, -50%)';
+
+let hamImg = document.createElement('img')
+hamImg.src = '../pizza-assets/ham.png';
+hamImg.style.position = 'absolute';
+hamImg.style.top = '50%';
+hamImg.style.left = '50%';
+hamImg.style.transform = 'translate(-50%, -50%)';
+
+let mushroomImg = document.createElement('img')
+mushroomImg.src = '../pizza-assets/mushroom.png';
+mushroomImg.style.position = 'absolute';
+mushroomImg.style.top = '50%';
+mushroomImg.style.left = '50%';
+mushroomImg.style.transform = 'translate(-50%, -50%)';
+
+let pineappleImg = document.createElement('img')
+pineappleImg.src = '../pizza-assets/pineapple.png';
+pineappleImg.style.position = 'absolute';
+pineappleImg.style.top = '50%';
+pineappleImg.style.left = '50%';
+pineappleImg.style.transform = 'translate(-50%, -50%)';
+
+let anchoviesImg = document.createElement('img')
+anchoviesImg.src = '../pizza-assets/anchovies.png';
+anchoviesImg.style.position = 'absolute';
+anchoviesImg.style.top = '50%';
+anchoviesImg.style.left = '50%';
+anchoviesImg.style.transform = 'translate(-50%, -50%)';
+
 
 let playerOneScoreRecap = document.createElement('h2')
 // playerOneScoreRecap.innerText = `${playerOne.value} made ${playerOneCurrentScore} pizzas. Now it's your turn, ${playerTwo.value}. Do you have what it takes to be the champion?`
@@ -175,9 +282,14 @@ startGameUserTwo.innerHTML = 'Start Game';
 
 // Remove Start Screen Form & Title
 function instructionSequence (){
-    game.removeChild(form);
+    // while (gameLeft.firstChild){
+    //     gameLeft.remove(gameLeft.lastChild)
+    // }
+    // while (gameRight.firstChild){
+    //     gameRight.remove(gameRight.lastChild)
+    // }
     game.removeChild(introTitle);
-
+    game.removeChild(startButton)
 
     game.append(instructHeader);
     game.append(gameInstructions);
@@ -190,7 +302,6 @@ function startGameplayPlayerOne (){
     game.removeChild(instructHeader);
     game.removeChild(gameInstructions);
     game.removeChild(startGameUserOne)
-    gameLeft.append(doughButton);
     gameRight.append(cheeseButton);
     gameLeft.append(sauceButton);
     gameRight.append(pepperoniButton);
@@ -204,6 +315,7 @@ function startGameplayPlayerOne (){
     gameRight.append(hamButton);
     gameLeft.append(mushroomButton);
     gameRight.append(pineappleButton);
+    gameLeft.append(anchovyButton);
     game.append(pizzaDough);
     
     game.append(bakeButtonUserOne);
@@ -217,20 +329,20 @@ function startGameplayPlayerOne (){
 function startGameplayPlayerTwo (){
     game.removeChild(playerOneScoreRecap);
     game.removeChild(startGameUserTwo);
-    game.append(doughButton);
-    game.append(cheeseButton);
-    game.append(sauceButton);
-    game.append(pepperoniButton);
-    game.append(sausageButton);
-    game.append(pepperButton);
-    game.append(garlicButton);
-    game.append(onionButton);
-    game.append(tomatoButton);
-    game.append(basilButton);
-    game.append(baconButton);
-    game.append(hamButton);
-    game.append(mushroomButton);
-    game.append(pineappleButton);
+    gameRight.append(cheeseButton);
+    gameLeft.append(sauceButton);
+    gameRight.append(pepperoniButton);
+    gameLeft.append(sausageButton);
+    gameRight.append(pepperButton);
+    gameLeft.append(garlicButton);
+    gameRight.append(onionButton);
+    gameLeft.append(tomatoButton);
+    gameRight.append(basilButton);
+    gameLeft.append(baconButton);
+    gameRight.append(hamButton);
+    gameLeft.append(mushroomButton);
+    gameRight.append(pineappleButton);
+    gameLeft.append(anchovyButton);
     game.append(pizzaDough);
     game.append(bakeButtonUserTwo);
     timeRemaining = 60;
@@ -264,21 +376,24 @@ function timeLower(){
 // Callback function for set Timeout - clear interval timer, remove buttons, add text and new buttons
 function timesUpPlayerOne (){
     clearInterval(myTimer);
-    game.removeChild(doughButton);
-    game.removeChild(cheeseButton);
-    game.removeChild(sauceButton);
-    game.removeChild(pepperoniButton);
-    game.removeChild(sausageButton);
-    game.removeChild(pepperButton);
-    game.removeChild(garlicButton);
-    game.removeChild(onionButton);
-    game.removeChild(tomatoButton);
-    game.removeChild(basilButton);
-    game.removeChild(baconButton);
-    game.removeChild(hamButton);
-    game.removeChild(mushroomButton);
-    game.removeChild(pineappleButton);
-    game.removeChild(bakeButtonUserOne);
+    gameLeft.removeChild(anchovyButton);
+    gameRight.removeChild(cheeseButton);
+    gameLeft.removeChild(sauceButton);
+    gameRight.removeChild(pepperoniButton);
+    gameLeft.removeChild(sausageButton);
+    gameRight.removeChild(pepperButton);
+    gameLeft.removeChild(garlicButton);
+    gameRight.removeChild(onionButton);
+    gameLeft.removeChild(tomatoButton);
+    gameRight.removeChild(basilButton);
+    gameLeft.removeChild(baconButton);
+    gameRight.removeChild(hamButton);
+    gameLeft.removeChild(mushroomButton);
+    gameRight.removeChild(pineappleButton);
+    while (game.firstChild){
+        game.removeChild(game.lastChild);
+    }
+    
     pizzaType.innerText = '';
     ingredientList.innerText = '';
     timer.innerText = '';
@@ -299,21 +414,24 @@ function countdownTimerPlayerTwo(){
 // Callback function for set Timeout - clear interval timer, remove buttons, add text and new buttons
 function timesUpPlayerTwo (){
     clearInterval(myTimer);
-    game.removeChild(doughButton);
-    game.removeChild(cheeseButton);
-    game.removeChild(sauceButton);
-    game.removeChild(pepperoniButton);
-    game.removeChild(sausageButton);
-    game.removeChild(pepperButton);
-    game.removeChild(garlicButton);
-    game.removeChild(onionButton);
-    game.removeChild(tomatoButton);
-    game.removeChild(basilButton);
-    game.removeChild(baconButton);
-    game.removeChild(hamButton);
-    game.removeChild(mushroomButton);
-    game.removeChild(pineappleButton);
-    game.removeChild(bakeButtonUserTwo);
+    gameLeft.removeChild(anchovyButton);
+    gameRight.removeChild(cheeseButton);
+    gameLeft.removeChild(sauceButton);
+    gameRight.removeChild(pepperoniButton);
+    gameLeft.removeChild(sausageButton);
+    gameRight.removeChild(pepperButton);
+    gameLeft.removeChild(garlicButton);
+    gameRight.removeChild(onionButton);
+    gameLeft.removeChild(tomatoButton);
+    gameRight.removeChild(basilButton);
+    gameLeft.removeChild(baconButton);
+    gameRight.removeChild(hamButton);
+    gameLeft.removeChild(mushroomButton);
+    gameRight.removeChild(pineappleButton);
+    while (game.firstChild){
+        game.removeChild(game.lastChild);
+    }
+    
     pizzaType.innerText = '';
     ingredientList.innerText = '';
     timer.innerText = '';
@@ -358,7 +476,17 @@ function playerOneBake() {
         userArray = [];
         compareArray = [];
     }
+    while (game.firstChild){
+        game.removeChild(game.lastChild);
+    }
+    game.append(pizzaDough);
+    game.append(bakeButtonUserOne);
+
 }
+
+
+
+
 
 // compare pizza created by user to pizza array given. add score to player 2
 function playerTwoBake() {
@@ -382,6 +510,11 @@ function playerTwoBake() {
         userArray = [];
         compareArray = [];
     }
+        while (game.firstChild){
+        game.removeChild(game.lastChild);
+    }
+    game.append(pizzaDough);
+    game.append(bakeButtonUserTwo);
 }
 
 
@@ -393,34 +526,34 @@ function PizzaReset(){
 function displayPizzaType(){
     if (pizzaArray.indexOf(randPizza) === 0){
         pizzaType.innerText = 'Cheese';
-        ingredientList.innerText = 'Dough, Sauce, Cheese';
+        ingredientList.innerText = 'Sauce, Cheese';
     } else if (pizzaArray.indexOf(randPizza) === 1){
         pizzaType.innerText = 'Pepperoni';
-        ingredientList.innerText = 'Dough, Sauce, Cheese, Pepperoni';
+        ingredientList.innerText = 'Sauce, Cheese, Pepperoni';
     } else if (pizzaArray.indexOf(randPizza) === 2){
         pizzaType.innerText = 'Sausage & Peppers';
-        ingredientList.innerText = 'Dough, Sauce, Cheese, Sausage, Peppers';
+        ingredientList.innerText = 'Sauce, Cheese, Sausage, Peppers';
     } else if (pizzaArray.indexOf(randPizza) === 3){
         pizzaType.innerText = 'Breathmint';
-        ingredientList.innerText = 'Dough, Sauce, Cheese, Garlic, Onion';
+        ingredientList.innerText = 'Sauce, Cheese, Anchovies, Garlic, Onion';
     } else if (pizzaArray.indexOf(randPizza) === 4){
         pizzaType.innerText = 'Margherita';
-        ingredientList.innerText = 'Dough, Sauce, Cheese, Basil, Garlic, Tomato';
+        ingredientList.innerText = 'Sauce, Cheese, Basil, Garlic, Tomato';
     } else if (pizzaArray.indexOf(randPizza) === 5){
         pizzaType.innerText = 'Meat Lovers';
-        ingredientList.innerText = 'Dough, Sauce, Cheese, Sausage, Pepperoni, Bacon, Ham';
+        ingredientList.innerText = 'Sauce, Cheese, Sausage, Pepperoni, Bacon, Ham';
     } else if (pizzaArray.indexOf(randPizza) === 6){
         pizzaType.innerText = 'Veggie';
-        ingredientList.innerText = 'Dough, Sauce, Cheese, Mushroom, Onion, Peppers, Tomato';
+        ingredientList.innerText = 'Sauce, Cheese, Mushroom, Onion, Peppers, Tomato';
     } else if (pizzaArray.indexOf(randPizza) === 7){
         pizzaType.innerText = 'White';
-        ingredientList.innerText = 'Dough, Cheese, Basil, Tomato, Garlic';
+        ingredientList.innerText = 'Cheese, Basil, Tomato, Garlic';
     } else if (pizzaArray.indexOf(randPizza) === 8){
         pizzaType.innerText = 'Vegan';
-        ingredientList.innerText = 'Dough, Sauce, Basil, Tomato, Mushroom, Onion, Pepper';
+        ingredientList.innerText = 'Sauce, Basil, Tomato, Mushroom, Onion, Pepper';
     } else if (pizzaArray.indexOf(randPizza) === 9){
         pizzaType.innerText = 'Hawaiian';
-        ingredientList.innerText = 'Dough, Sauce, Cheese, Ham, Pineapple';
+        ingredientList.innerText = 'Sauce, Cheese, Ham, Pineapple';
     } 
 
 }
@@ -442,7 +575,7 @@ function playAgain(){
 // Event Listeners
 
 // Event listener on form submit - places player names in top left and right, runs introduction function
-form.addEventListener('submit', function(e){
+startButton.addEventListener('click', function(e){
     e.preventDefault();
     playerOneScore.innerHTML = `${playerOne.value}`
     playerTwoScore.innerHTML = `${playerTwo.value}`;
@@ -483,8 +616,8 @@ playAgainButton.addEventListener('click', function(){
 
 // Ingredient Buttons - add ingredient to array when clicked
 
-doughButton.addEventListener('click', function(){
-    doughClick();
+anchovyButton.addEventListener('click', function(){
+    anchovyClick();
 })
 
 cheeseButton.addEventListener('click', function(){
@@ -540,8 +673,9 @@ pineappleButton.addEventListener('click', function(){
 })
 // array push functions
 
-function doughClick(){
-    userArray.push('dough');
+function anchovyClick(){
+    userArray.push('anchovies');
+    game.append(anchoviesImg)
 }
 function cheeseClick(){
     userArray.push('cheese');
@@ -553,36 +687,51 @@ function sauceClick(){
 }
 function pepperoniClick(){
     userArray.push('pepperoni');
+    game.append(pepperoniImg);
 }
 function sausageClick(){
     userArray.push('sausage');
+    game.append(sausageImg)
 }
 function pepperClick(){
     userArray.push('pepper');
+    game.append(pepperImg);
 }
 function garlicClick(){
     userArray.push('garlic');
+    game.append(garlicImg);
 }
 function onionClick(){
     userArray.push('onion');
+    game.append(onionImg);
 }
 function tomatoClick(){
     userArray.push('tomato');
+    game.append(tomatoImg);
 }
+
 function basilClick(){
     userArray.push('basil');
+    game.append(basilImg);
 }
+
 function baconClick(){
     userArray.push('bacon');
+    game.append(baconImg)
 }
+
 function hamClick(){
     userArray.push('ham');
+    game.append(hamImg)
 }
+
 function mushroomClick(){
     userArray.push('mushroom');
+    game.append(mushroomImg)
 }
 function pineappleClick(){
     userArray.push('pineapple');
+    game.append(pineappleImg)
 }
 
 
@@ -591,24 +740,24 @@ function pineappleClick(){
 
 // Pizza Arrays
 
-let cheese = ['cheese', 'dough', 'sauce'];
+let cheese = ['cheese', 'sauce'];
 
-let pepperoni = ['cheese', 'dough', 'pepperoni', 'sauce'];
+let pepperoni = ['cheese', 'pepperoni', 'sauce'];
 
-let sausagePeppers = ['cheese', 'dough', 'pepper', 'sauce', 'sausage'];
+let sausagePeppers = ['cheese', 'pepper', 'sauce', 'sausage'];
 
-let breathmint = ['cheese', 'dough', 'garlic', 'onion', 'sauce'];
+let breathmint = ['cheese', 'garlic', 'onion', 'anchovies', 'sauce'];
 
-let margherita  = ['basil', 'cheese', 'dough', 'garlic', 'sauce', 'tomato'];
+let margherita  = ['basil', 'cheese', 'garlic', 'sauce', 'tomato'];
 
-let meatLovers = ['bacon', 'cheese', 'dough', 'ham', 'pepperoni', 'sauce', 'sausage'];
+let meatLovers = ['bacon', 'cheese', 'ham', 'pepperoni', 'sauce', 'sausage'];
 
-let veggie = ['cheese', 'dough', 'mushroom', 'onion', 'pepper', 'sauce', 'tomato'];
+let veggie = ['cheese', 'mushroom', 'onion', 'pepper', 'sauce', 'tomato'];
 
-let white = ['basil', 'cheese', 'dough', 'garlic', 'tomato'];
+let white = ['basil', 'cheese', 'garlic', 'tomato'];
 
-let vegan = ['basil', 'dough', 'mushroom', 'onion', 'pepper', 'sauce',  'tomato']
+let vegan = ['basil', 'mushroom', 'onion', 'pepper', 'sauce',  'tomato']
 
-let hawaiian = ['cheese', 'dough', 'ham', 'pineapple', 'sauce']
+let hawaiian = ['cheese', 'ham', 'pineapple', 'sauce']
 
 let pizzaArray = [cheese, pepperoni, sausagePeppers, breathmint, margherita, meatLovers, veggie, white, vegan, hawaiian];

@@ -5,6 +5,7 @@ body {
     /* background-image: url('../img/dungeonhell.png'); */
     background-size: cover;
     background-repeat: space;
+    /* height: 100vh; */
   }
   
   /* canvas { */
@@ -15,7 +16,8 @@ body {
 
   #container {
     max-width: 50em;
-    /* height: 70vh; */
+    position: relative;
+    /* height: 100vh; */
     background-color: #f4f5f0;
     margin: 0 auto;
     padding: 1em;
@@ -26,6 +28,7 @@ body {
     grid-template-areas: "top-left top-center top-right"
                           "game-left game game-right"
                           "btm-left btm-center btm-right";
+    font-family:  'Monoton', cursive;
 }
 
 .ingredient-button{
@@ -86,6 +89,7 @@ body {
 
   #game-section {
     background-color: #FFCE6E;
+
   }
 
   #btm-left {
