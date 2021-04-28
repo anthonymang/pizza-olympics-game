@@ -24,8 +24,13 @@ body {
     grid-template-rows: .25fr .5fr .25fr;
     grid-template-columns: .22fr .56fr .22fr;
     grid-template-areas: "top-left top-center top-right"
-                          "game game game"
+                          "game-left game game-right"
                           "btm-left btm-center btm-right";
+}
+
+.ingredient-button{
+  margin: 5px auto;
+  border-radius: 10px;
 }
 
 #player-one-score, #player-two-score {
@@ -37,7 +42,7 @@ body {
   font-family: 'Monoton', cursive;
 }
 
-#top-left, #top-right, #btm-left, #btm-right, #game {
+#top-left, #top-right, #btm-left, #btm-right, #game, #game-left, #game-right {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -61,6 +66,11 @@ body {
 
   }
 
+  #game-left {
+    grid-area: game-left;
+    background-color: #FFCE6E;
+  }
+
   main {
     grid-area: game;
     background-color: #FFCE6E;
@@ -68,7 +78,16 @@ body {
     height: 450px;
 
   }
-  
+
+  #game-right {
+    grid-area: game-right;
+    background-color: #FFCE6E;
+  }
+
+  #game-section {
+    background-color: #FFCE6E;
+  }
+
   #btm-left {
     grid-area: btm-left;
 

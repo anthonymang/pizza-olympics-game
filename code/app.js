@@ -1,6 +1,8 @@
 // Grabbed DOM Elements
 
 const game = document.getElementById('game');
+const gameLeft = document.getElementById('game-left');
+const gameRight = document.getElementById('game-right');
 const form = document.getElementById('form');
 let playerOne = document.getElementById('pizza-chef-1');
 let playerTwo = document.getElementById('pizza-chef-2');
@@ -20,7 +22,7 @@ let userArray = [];
 let randPizza = [];
 let timeRemaining = 60;
 
-// DOM Assets
+// DOM Assets - Created
 let startGameUserOne = document.createElement('button');
 startGameUserOne.setAttribute('id', 'advance-player-one')
 startGameUserOne.innerHTML = 'Start Game';
@@ -32,33 +34,103 @@ gameInstructions.innerHTML = "Welcome to the Pizza Olympics. In today's game, tw
 gameInstructions.style.margin = '0px 10px';
 
 let doughButton = document.createElement('button');
+doughButton.setAttribute('class', 'ingredient-button')
 doughButton.innerHTML = 'dough';
+doughButton.style.height ='50px'
+doughButton.style.width ='50px';
+
 let cheeseButton = document.createElement('button');
-cheeseButton.innerHTML = 'cheese';
+cheeseButton.setAttribute('class', 'ingredient-button')
+cheeseButton.style.height ='50px';
+cheeseButton.style.width ='50px';
+cheeseButton.style.backgroundImage = "url('../icon-imgs/cheese-icon.png')"; 
+cheeseButton.style.backgroundSize = '100%';
+
 let sauceButton = document.createElement('button');
-sauceButton.innerHTML = 'sauce';
+sauceButton.setAttribute('class', 'ingredient-button')
+sauceButton.style.height ='50px';
+sauceButton.style.width ='50px';
+sauceButton.style.backgroundImage = "url('../icon-imgs/sauce-icon.png')"; 
+sauceButton.style.backgroundSize = '100%';
+
 let pepperoniButton = document.createElement('button');
-pepperoniButton.innerHTML = 'pepperoni';
+pepperoniButton.setAttribute('class', 'ingredient-button')
+pepperoniButton.style.height ='50px';
+pepperoniButton.style.width ='50px';
+pepperoniButton.style.backgroundImage = "url('../icon-imgs/pepperoni-icon.png')"; 
+pepperoniButton.style.backgroundSize = '100%';
+
 let sausageButton = document.createElement('button');
-sausageButton.innerHTML = 'sausage';
+sausageButton.setAttribute('class', 'ingredient-button')
+sausageButton.style.height ='50px';
+sausageButton.style.width ='50px';
+sausageButton.style.backgroundImage = "url('../icon-imgs/sausage-icon.png')"; 
+sausageButton.style.backgroundSize = '100%';
+
 let pepperButton = document.createElement('button');
-pepperButton.innerHTML = 'pepper';
+pepperButton.setAttribute('class', 'ingredient-button')
+pepperButton.style.height ='50px';
+pepperButton.style.width ='50px';
+pepperButton.style.backgroundImage = "url('../icon-imgs/pepper-icon.png')"; 
+pepperButton.style.backgroundSize = '100%';
+
 let garlicButton = document.createElement('button');
-garlicButton.innerHTML = 'garlic';
+garlicButton.setAttribute('class', 'ingredient-button')
+garlicButton.style.height ='50px';
+garlicButton.style.width ='50px';
+garlicButton.style.backgroundImage = "url('../icon-imgs/garlic-icon.png')"; 
+garlicButton.style.backgroundSize = '100%';
+
 let onionButton = document.createElement('button');
-onionButton.innerHTML = 'onion';
+onionButton.setAttribute('class', 'ingredient-button')
+onionButton.style.height ='50px';
+onionButton.style.width ='50px';
+onionButton.style.backgroundImage = "url('../icon-imgs/onion-icon.png')"; 
+onionButton.style.backgroundSize = '100%';
+
+
 let tomatoButton = document.createElement('button');
-tomatoButton.innerHTML = 'tomato';
+tomatoButton.setAttribute('class', 'ingredient-button')
+tomatoButton.style.height ='50px';
+tomatoButton.style.width ='50px';
+tomatoButton.style.backgroundImage = "url('../icon-imgs/tomato-icon.png')"; 
+tomatoButton.style.backgroundSize = '100%';
+
 let basilButton = document.createElement('button');
-basilButton.innerHTML = 'basil';
+basilButton.setAttribute('class', 'ingredient-button')
+basilButton.style.height ='50px';
+basilButton.style.width ='50px';
+basilButton.style.backgroundImage = "url('../icon-imgs/basil-icon.png')"; 
+basilButton.style.backgroundSize = '100%';
+
+
 let baconButton = document.createElement('button');
-baconButton.innerHTML = 'bacon'
+baconButton.setAttribute('class', 'ingredient-button')
+baconButton.style.height ='50px';
+baconButton.style.width ='50px';
+baconButton.style.backgroundImage = "url('../icon-imgs/bacon-icon.png')"; 
+baconButton.style.backgroundSize = '100%';
+
 let hamButton = document.createElement('button');
-hamButton.innerHTML = 'ham';
+hamButton.setAttribute('class', 'ingredient-button')
+hamButton.style.height ='50px';
+hamButton.style.width ='50px';
+hamButton.style.backgroundImage = "url('../icon-imgs/ham-icon.png')"; 
+hamButton.style.backgroundSize = '100%';
+
 let mushroomButton = document.createElement('button');
-mushroomButton.innerHTML = 'mushroom';
+mushroomButton.setAttribute('class', 'ingredient-button')
+mushroomButton.style.height ='50px';
+mushroomButton.style.width ='50px';
+mushroomButton.style.backgroundImage = "url('../icon-imgs/mushroom-icon.png')"; 
+mushroomButton.style.backgroundSize = '100%';
+
 let pineappleButton = document.createElement('button');
-pineappleButton.innerHTML = 'pineapple';
+pineappleButton.setAttribute('class', 'ingredient-button')
+pineappleButton.style.height ='50px';
+pineappleButton.style.width ='50px';
+pineappleButton.style.backgroundImage = "url('../icon-imgs/pineapple-icon.png')"; 
+pineappleButton.style.backgroundSize = '100%';
 
 let bakeButtonUserOne = document.createElement('button');
 bakeButtonUserOne.innerHTML = 'Bake';
@@ -68,6 +140,27 @@ bakeButtonUserTwo.innerHTML = 'Bake';
 
 let playAgainButton = document.createElement('button');
 playAgainButton.innerHTML = 'Play Again';
+
+let pizzaDough = document.createElement('img')
+pizzaDough.src = '../pizza-assets/dough-base.png'
+pizzaDough.style.position = 'absolute';
+pizzaDough.style.top = '40%';
+pizzaDough.style.left = '50%';
+pizzaDough.style.transform = 'translate(-50%, -50%)'
+
+let pizzaSauce = document.createElement('img')
+pizzaSauce.src = '../pizza-assets/sauce.png';
+pizzaSauce.style.position = 'absolute';
+pizzaSauce.style.top = '40%';
+pizzaSauce.style.left = '50%';
+pizzaSauce.style.transform = 'translate(-50%, -50%)'
+
+let cheeseImg = document.createElement('img')
+cheeseImg.src = '../pizza-assets/cheese.png';
+cheeseImg.style.position = 'absolute';
+cheeseImg.style.top = '40%';
+cheeseImg.style.left = '50%';
+cheeseImg.style.transform = 'translate(-50%, -50%)'
 
 let playerOneScoreRecap = document.createElement('h2')
 // playerOneScoreRecap.innerText = `${playerOne.value} made ${playerOneCurrentScore} pizzas. Now it's your turn, ${playerTwo.value}. Do you have what it takes to be the champion?`
@@ -97,20 +190,22 @@ function startGameplayPlayerOne (){
     game.removeChild(instructHeader);
     game.removeChild(gameInstructions);
     game.removeChild(startGameUserOne)
-    game.append(doughButton);
-    game.append(cheeseButton);
-    game.append(sauceButton);
-    game.append(pepperoniButton);
-    game.append(sausageButton);
-    game.append(pepperButton);
-    game.append(garlicButton);
-    game.append(onionButton);
-    game.append(tomatoButton);
-    game.append(basilButton);
-    game.append(baconButton);
-    game.append(hamButton);
-    game.append(mushroomButton);
-    game.append(pineappleButton);
+    gameLeft.append(doughButton);
+    gameRight.append(cheeseButton);
+    gameLeft.append(sauceButton);
+    gameRight.append(pepperoniButton);
+    gameLeft.append(sausageButton);
+    gameRight.append(pepperButton);
+    gameLeft.append(garlicButton);
+    gameRight.append(onionButton);
+    gameLeft.append(tomatoButton);
+    gameRight.append(basilButton);
+    gameLeft.append(baconButton);
+    gameRight.append(hamButton);
+    gameLeft.append(mushroomButton);
+    gameRight.append(pineappleButton);
+    game.append(pizzaDough);
+    
     game.append(bakeButtonUserOne);
     pizzaArray.sample();
     countdownTimerPlayerOne();
@@ -136,6 +231,7 @@ function startGameplayPlayerTwo (){
     game.append(hamButton);
     game.append(mushroomButton);
     game.append(pineappleButton);
+    game.append(pizzaDough);
     game.append(bakeButtonUserTwo);
     timeRemaining = 60;
     pizzaArray.sample();
@@ -449,9 +545,11 @@ function doughClick(){
 }
 function cheeseClick(){
     userArray.push('cheese');
+    game.append(cheeseImg);
 }
 function sauceClick(){
     userArray.push('sauce');
+    game.append(pizzaSauce);
 }
 function pepperoniClick(){
     userArray.push('pepperoni');
