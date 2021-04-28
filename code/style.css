@@ -31,6 +31,26 @@ body {
     font-family:  'Monoton', cursive;
 }
 
+.chefNames {
+  margin: 5px auto;
+  /* height: 25px; */
+  font-size: 20px;;
+}
+
+#start-button{
+  margin: 5px auto;
+  height: 40px;
+  width: 175px;
+  font-size: 30px;
+  border-radius: 10px;
+  font-family: 'Trebuchet MS', sans-serif;
+
+}
+
+#pizza-chef-1, #pizza-chef-2 {
+  display: block;
+}
+
 .ingredient-button{
   margin: 5px auto;
   border-radius: 10px;
@@ -50,6 +70,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+
+  #game, #game-left, #game-right {
+    background-color: #FFCE6E;
   }
 
   #top-left {
@@ -87,11 +111,7 @@ body {
     background-color: #FFCE6E;
   }
 
-  #game-section {
-    background-color: #FFCE6E;
-
-  }
-
+  
   #btm-left {
     grid-area: btm-left;
 
