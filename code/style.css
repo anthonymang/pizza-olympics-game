@@ -33,8 +33,32 @@ body {
 
 .chefNames {
   margin: 5px auto;
-  /* height: 25px; */
   font-size: 20px;;
+}
+
+.bake-button {
+  position: absolute;
+  top: 75%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 40px;
+  width: 100px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.advance-button {
+  height: 40px;
+  width: 175px;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-size: 30px;
+  border-radius: 10px;
+}
+
+.game-text {
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  margin: 10px 10px;
 }
 
 #start-button{

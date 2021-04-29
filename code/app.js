@@ -7,14 +7,12 @@ const form = document.getElementById('form');
 let playerOne = document.getElementById('pizza-chef-1');
 let playerTwo = document.getElementById('pizza-chef-2');
 const introTitle = document.getElementById('intro-title');
-const startButtonPlayerOne = document.getElementById('advance-player-one');
 const playerOneScore = document.getElementById('player-one-score');
 const playerTwoScore = document.getElementById('player-two-score');
 const timer = document.getElementById('timer');
 const pizzaType = document.getElementById('pizza-type')
 const ingredientList = document.getElementById('ingredient-list');
-const startButton = document.getElementById('start-button')
-const chefNames = document.querySelectorAll('.chefNames')
+
 
 // Variables to be Changed
 let playerOneCurrentScore = 0;
@@ -24,31 +22,19 @@ let randPizza = [];
 let timeRemaining = 60;
 
 // DOM Assets - Created
+
+// Advance Buttons
 let startGameUserOne = document.createElement('button');
-startGameUserOne.setAttribute('id', 'advance-player-one')
+startGameUserOne.setAttribute('class', 'advance-button')
 startGameUserOne.innerHTML = 'Start Game';
-startGameUserOne.style.height = '40px';
-startGameUserOne.style.width = '175px';
-startGameUserOne.style.fontSize = '30px';
-startGameUserOne.style.fontFamily = "'Trebuchet MS', sans-serif"
-startGameUserOne.style.borderRadius= '10px';
 
 let startGameUserTwo = document.createElement('button');
-startGameUserTwo.setAttribute('id', 'advance-player-Two')
+startGameUserTwo.setAttribute('class', 'advance-button')
 startGameUserTwo.innerHTML = 'Start Game';
-startGameUserTwo.style.height = '40px';
-startGameUserTwo.style.width = '175px';
-startGameUserTwo.style.fontSize = '30px';
-startGameUserTwo.style.fontFamily = "'Trebuchet MS', sans-serif"
-startGameUserTwo.style.borderRadius= '10px';
 
-
-let instructHeader = document.createElement('h1');
-instructHeader.innerHTML = "Instructions";
-let gameInstructions = document.createElement('p');
-gameInstructions.style.fontFamily = "'Trebuchet MS', sans-serif";
-gameInstructions.innerHTML = "Welcome to the Pizza Olympics. In today's game, two Pizza Chefs will square off to make as many pizzas as they can in one minute. Every pizza's ingredients and toppings must match the recipe exactly. Press the corresponding ingredient button to add it to the pizza. When your pizza has all the right toppings, hit the deliver button to submit it for Pizza Olympic inspection. If the pizza is the correct recipe, it will be added to your total tally. But be careful, chefs. If you mess up a pizza you will have to start the recipe from scratch. The Pizza Chef who makes the most pizzas in one minute will be crowned champion. When you're ready to start, click the button below.";
-gameInstructions.style.margin = '10px 10px';
+let playAgainButton = document.createElement('button');
+playAgainButton.setAttribute('class', 'advance-button')
+playAgainButton.innerHTML = 'Play Again';
 
 // Ingredient Buttons
 let anchovyButton = document.createElement('button');
@@ -69,36 +55,12 @@ let pineappleButton = document.createElement('button');
 
 // Bake Buttons
 let bakeButtonUserOne = document.createElement('button');
+bakeButtonUserOne.setAttribute('class', 'bake-button')
 bakeButtonUserOne.innerHTML = 'Bake';
-bakeButtonUserOne.style.position = 'absolute';
-bakeButtonUserOne.style.top = '75%'
-bakeButtonUserOne.style.left = '50%'
-bakeButtonUserOne.style.transform = 'translate(-50%, -50%)'
-bakeButtonUserOne.style.height = '40px'
-bakeButtonUserOne.style.width = '100px';
-bakeButtonUserOne.style.fontFamily = "'Trebuchet MS', sans-serif";
-bakeButtonUserOne.style.fontSize = '30px';
-bakeButtonUserOne.style.borderRadius = '10px';
 
 let bakeButtonUserTwo = document.createElement('button');
+bakeButtonUserTwo.setAttribute('class', 'bake-button')
 bakeButtonUserTwo.innerHTML = 'Bake';
-bakeButtonUserTwo.style.position = 'absolute';
-bakeButtonUserTwo.style.top = '75%'
-bakeButtonUserTwo.style.left = '50%'
-bakeButtonUserTwo.style.transform = 'translate(-50%, -50%)'
-bakeButtonUserTwo.style.height = '40px'
-bakeButtonUserTwo.style.width = '100px';
-bakeButtonUserTwo.style.fontFamily = "'Trebuchet MS', sans-serif";
-bakeButtonUserTwo.style.fontSize = '30px';
-bakeButtonUserTwo.style.borderRadius = '10px';
-
-let playAgainButton = document.createElement('button');
-playAgainButton.innerHTML = 'Play Again';
-playAgainButton.style.height = '40px'
-playAgainButton.style.width = '175px';
-playAgainButton.style.fontFamily = "'Trebuchet MS', sans-serif";
-playAgainButton.style.fontSize = '30px';
-playAgainButton.style.borderRadius = '10px';
 
 // Pizza Images
 
@@ -118,15 +80,20 @@ let mushroomImg = document.createElement('img')
 let pineappleImg = document.createElement('img')
 let anchoviesImg = document.createElement('img')
 
+// In game text
+let instructHeader = document.createElement('h1');
+instructHeader.setAttribute('class', 'game-text')
+instructHeader.innerHTML = "Instructions";
+
+let gameInstructions = document.createElement('p');
+gameInstructions.setAttribute('class', 'game-text');
+gameInstructions.innerHTML = "Welcome to the Pizza Olympics. In today's game, two Pizza Chefs will square off to make as many pizzas as they can in one minute. Every pizza's ingredients and toppings must match the recipe exactly. Press the corresponding ingredient button to add it to the pizza. When your pizza has all the right toppings, hit the deliver button to submit it for Pizza Olympic inspection. If the pizza is the correct recipe, it will be added to your total tally. But be careful, chefs. If you mess up a pizza you will have to start the recipe from scratch. The Pizza Chef who makes the most pizzas in one minute will be crowned champion. When you're ready to start, click the button below.";
 
 let playerOneScoreRecap = document.createElement('h2')
-playerOneScoreRecap.style.fontFamily = "'Trebuchet MS', sans-serif"
-playerOneScoreRecap.style.margin = "auto 10";
-// playerOneScoreRecap.innerText = `${playerOne.value} made ${playerOneCurrentScore} pizzas. Now it's your turn, ${playerTwo.value}. Do you have what it takes to be the champion?`
+playerOneScoreRecap.setAttribute('class', 'game-text')
 
 let endGameMessage = document.createElement('h2');
-endGameMessage.style.fontFamily = "'Trebuchet MS', sans-serif"
-endGameMessage.style.margin = "auto 10";
+endGameMessage.setAttribute('class', 'game-text')
 
 
 // HELPER FUNCTIONS
@@ -136,8 +103,6 @@ function instructionSequence (){
   
     game.removeChild(form)
     game.removeChild(introTitle);
-    // game.removeChild(startButton)
-
     game.append(instructHeader);
     game.append(gameInstructions);
     game.append(startGameUserOne);
@@ -150,31 +115,18 @@ function startGameplayPlayerOne (){
     game.removeChild(gameInstructions);
     game.removeChild(startGameUserOne)
     createIngredientButton(cheeseButton, "url('./icon-imgs/cheese-icon.png')", gameRight);
-    // gameLeft.append(sauceButton);
     createIngredientButton(sauceButton, "url('./icon-imgs/sauce-icon.png')", gameLeft)
-    // gameRight.append(pepperoniButton);
     createIngredientButton(pepperoniButton, "url('./icon-imgs/pepperoni-icon.png')", gameRight)
-    // gameLeft.append(sausageButton);
     createIngredientButton(sausageButton, "url('./icon-imgs/sausage-icon.png')", gameLeft)
-    // gameRight.append(pepperButton);
     createIngredientButton(pepperButton, "url('./icon-imgs/pepper-icon.png')", gameRight)
-    // gameLeft.append(garlicButton);
     createIngredientButton(garlicButton, "url('./icon-imgs/garlic-icon.png')", gameLeft)
-    // gameRight.append(onionButton);
     createIngredientButton(onionButton, "url('./icon-imgs/onion-icon.png')", gameRight)
-    gameLeft.append(tomatoButton);
     createIngredientButton(tomatoButton, "url('./icon-imgs/tomato-icon.png')", gameLeft)
-    // gameRight.append(basilButton);
     createIngredientButton(basilButton, "url('./icon-imgs/basil-icon.png')", gameRight)
-    // gameLeft.append(baconButton);
     createIngredientButton(baconButton, "url('./icon-imgs/bacon-icon.png')", gameLeft)
-    // gameRight.append(hamButton);
     createIngredientButton(hamButton, "url('./icon-imgs/ham-icon.png')", gameRight)
-    // gameLeft.append(mushroomButton);
     createIngredientButton(mushroomButton, "url('./icon-imgs/mushroom-icon.png')", gameLeft)
-    // gameRight.append(pineappleButton);
     createIngredientButton(pineappleButton, "url('./icon-imgs/pineapple-icon.png')", gameRight)
-    // gameLeft.append(anchovyButton);
     createIngredientButton(anchovyButton, "url('./icon-imgs/anchovies-icon.png')", gameLeft)
     createPizzaImage(pizzaDough, './pizza-assets/dough-base.png', '0');
     game.append(bakeButtonUserOne);
@@ -213,7 +165,6 @@ function startGameplayPlayerTwo (){
 // Choose Random Pizza - Run displayPizzaType to update name & ingredients list
 Array.prototype.sample = function(){
     randPizza = this[Math.floor(Math.random()*this.length)];
-    console.log(randPizza);
     displayPizzaType();
   }
 
@@ -226,8 +177,6 @@ function countdownTimerPlayerOne(){
 
 // Callback function for set interval - takes time down by 1 and updates screen with new time
 function timeLower(){
-    // console.log('interval working')
-    // console.log(timeRemaining);
     timeRemaining-=1;
     timer.innerText = `Time: ${timeRemaining}`;
 }
@@ -256,7 +205,6 @@ function timesUpPlayerOne (){
     pizzaType.innerText = '';
     ingredientList.innerText = '';
     timer.innerText = '';
-    // let playerOneScoreRecap = document.createElement('h2')
     playerOneScoreRecap.innerText = `${playerOne.value} made ${playerOneCurrentScore} pizzas. Now it's your turn, ${playerTwo.value}. Do you have what it takes to be the champion?`
     game.append(playerOneScoreRecap);
     game.append(startGameUserTwo);
@@ -294,7 +242,6 @@ function timesUpPlayerTwo (){
     pizzaType.innerText = '';
     ingredientList.innerText = '';
     timer.innerText = '';
-    // let playerOneScoreRecap = document.createElement('h2')
     determineWinner(playerOneCurrentScore, playerTwoCurrentScore);
     game.append(playAgainButton);
 }
@@ -302,11 +249,11 @@ function timesUpPlayerTwo (){
 // compare scores and generate proper winner message
 function determineWinner(score1, score2){
     if (score1 > score2){
-        endGameMessage.innerText = `With a grand total of ${score1} pizzas, ${playerOne.value} wins. Congrats ${playerOne.value}!`;
+        endGameMessage.innerHTML = `With a grand total of ${score1} pizzas, ${playerOne.value} wins.<br>Congrats ${playerOne.value}!`;
     } else if (score1 < score2) {
-        endGameMessage.innerText = `With a grand total of ${score2} pizzas, ${playerTwo.value} wins. Congrats ${playerTwo.value}!`;
+        endGameMessage.innerHTML = `With a grand total of ${score2} pizzas, ${playerTwo.value} wins.<br>Congrats ${playerTwo.value}!`;
     } else if (score1 == score2){
-        endGameMessage.innerText = `It's a tie! Play again to determine the true champion`;
+        endGameMessage.innerHTML = `It's a tie!<br>Play again to determine the true champion`;
     }
     game.append(endGameMessage);
 }
@@ -318,9 +265,7 @@ function playerOneBake() {
     if (compareArray.length === randPizza.length && compareArray.every(function(value, index) { return value === randPizza[index]})
     ){
         playerOneCurrentScore++;
-        playerOneScore.innerHTML = `${playerOne.value}: ${playerOneCurrentScore} Pizzas`;
-        // playerTwoScore.innerHTML = `${playerTwo.value}: ${playerTwoCurrentScore} Pizzas`;
-        
+        playerOneScore.innerHTML = `${playerOne.value}<br>Pizzas: ${playerOneCurrentScore}`;        
         pizzaType.innerText = '';
         ingredientList.innerText = "Nice pizza, how about another?"
         setTimeout(PizzaReset, 1000)
@@ -343,18 +288,13 @@ function playerOneBake() {
 
 }
 
-
-
-
-
 // compare pizza created by user to pizza array given. add score to player 2
 function playerTwoBake() {
     compareArray = userArray.sort();
     if (compareArray.length === randPizza.length && compareArray.every(function(value, index) { return value === randPizza[index]})
     ){
         playerTwoCurrentScore++;
-        playerTwoScore.innerHTML = `${playerTwo.value}: ${playerTwoCurrentScore} Pizzas`;
-        
+        playerTwoScore.innerHTML = `${playerTwo.value}<br>Pizzas: ${playerTwoCurrentScore}`;
         pizzaType.innerText = '';
         ingredientList.innerText = "Nice pizza, how about another?"
         setTimeout(PizzaReset, 1000)
@@ -634,5 +574,3 @@ let vegan = ['basil', 'mushroom', 'onion', 'pepper', 'sauce',  'tomato']
 let hawaiian = ['cheese', 'ham', 'pineapple', 'sauce']
 
 let pizzaArray = [cheese, pepperoni, sausagePeppers, breathmint, margherita, meatLovers, veggie, white, vegan, hawaiian];
-
-console.log(userArray);

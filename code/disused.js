@@ -186,3 +186,41 @@
 // anchoviesImg.style.left = '50%';
 // anchoviesImg.style.transform = 'translate(-50%, -50%)';
 // anchoviesImg.style.zIndex = '3'
+
+// bakeButtonUserOne.style.position = 'absolute';
+// bakeButtonUserOne.style.top = '75%'
+// bakeButtonUserOne.style.left = '50%'
+// bakeButtonUserOne.style.transform = 'translate(-50%, -50%)'
+// bakeButtonUserOne.style.height = '40px'
+// bakeButtonUserOne.style.width = '100px';
+// bakeButtonUserOne.style.fontFamily = "'Trebuchet MS', sans-serif";
+// bakeButtonUserOne.style.fontSize = '30px';
+// bakeButtonUserOne.style.borderRadius = '10px';
+
+// bakeButtonUserTwo.style.position = 'absolute';
+// bakeButtonUserTwo.style.top = '75%'
+// bakeButtonUserTwo.style.left = '50%'
+// bakeButtonUserTwo.style.transform = 'translate(-50%, -50%)'
+// bakeButtonUserTwo.style.height = '40px'
+// bakeButtonUserTwo.style.width = '100px';
+// bakeButtonUserTwo.style.fontFamily = "'Trebuchet MS', sans-serif";
+// bakeButtonUserTwo.style.fontSize = '30px';
+// bakeButtonUserTwo.style.borderRadius = '10px';
+
+startGameUserOne.style.height = '40px';
+startGameUserOne.style.width = '175px';
+startGameUserOne.style.fontSize = '30px';
+startGameUserOne.style.fontFamily = "'Trebuchet MS', sans-serif"
+startGameUserOne.style.borderRadius= '10px';
+
+startGameUserTwo.style.height = '40px';
+startGameUserTwo.style.width = '175px';
+startGameUserTwo.style.fontSize = '30px';
+startGameUserTwo.style.fontFamily = "'Trebuchet MS', sans-serif"
+startGameUserTwo.style.borderRadius= '10px';
+
+playAgainButton.style.height = '40px'
+playAgainButton.style.width = '175px';
+playAgainButton.style.fontFamily = "'Trebuchet MS', sans-serif";
+playAgainButton.style.fontSize = '30px';
+playAgainButton.style.borderRadius = '10px';
