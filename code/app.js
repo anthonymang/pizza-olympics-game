@@ -185,124 +185,124 @@ playAgainButton.style.borderRadius = '10px';
 // Pizza Images
 
 let pizzaDough = document.createElement('img')
-pizzaDough.src = './pizza-assets/dough-base.png'
-pizzaDough.style.position = 'absolute';
-pizzaDough.style.top = '50%';
-pizzaDough.style.left = '50%';
-pizzaDough.style.transform = 'translate(-50%, -50%)'
-pizzaDough.style.zIndex = '0'
+// pizzaDough.src = './pizza-assets/dough-base.png'
+// pizzaDough.style.position = 'absolute';
+// pizzaDough.style.top = '50%';
+// pizzaDough.style.left = '50%';
+// pizzaDough.style.transform = 'translate(-50%, -50%)'
+// pizzaDough.style.zIndex = '0'
 
 let pizzaSauce = document.createElement('img')
-pizzaSauce.src = './pizza-assets/sauce.png';
-pizzaSauce.style.position = 'absolute';
-pizzaSauce.style.top = '50%';
-pizzaSauce.style.left = '50%';
-pizzaSauce.style.transform = 'translate(-50%, -50%)'
-pizzaSauce.style.zIndex = '1'
+// pizzaSauce.src = './pizza-assets/sauce.png';
+// pizzaSauce.style.position = 'absolute';
+// pizzaSauce.style.top = '50%';
+// pizzaSauce.style.left = '50%';
+// pizzaSauce.style.transform = 'translate(-50%, -50%)'
+// pizzaSauce.style.zIndex = '1'
 
 let cheeseImg = document.createElement('img')
-cheeseImg.src = './pizza-assets/cheese.png';
-cheeseImg.style.position = 'absolute';
-cheeseImg.style.top = '50%';
-cheeseImg.style.left = '50%';
-cheeseImg.style.transform = 'translate(-50%, -50%)'
-cheeseImg.style.zIndex = '2'
+// cheeseImg.src = './pizza-assets/cheese.png';
+// cheeseImg.style.position = 'absolute';
+// cheeseImg.style.top = '50%';
+// cheeseImg.style.left = '50%';
+// cheeseImg.style.transform = 'translate(-50%, -50%)'
+// cheeseImg.style.zIndex = '2'
 
 let pepperoniImg = document.createElement('img')
-pepperoniImg.src = './pizza-assets/pepperoni.png';
-pepperoniImg.style.position = 'absolute';
-pepperoniImg.style.top = '50%';
-pepperoniImg.style.left = '50%';
-pepperoniImg.style.transform = 'translate(-50%, -50%)';
-pepperoniImg.style.zIndex = '3'
+// pepperoniImg.src = './pizza-assets/pepperoni.png';
+// pepperoniImg.style.position = 'absolute';
+// pepperoniImg.style.top = '50%';
+// pepperoniImg.style.left = '50%';
+// pepperoniImg.style.transform = 'translate(-50%, -50%)';
+// pepperoniImg.style.zIndex = '3'
 
 let sausageImg = document.createElement('img')
-sausageImg.src = './pizza-assets/sausage.png';
-sausageImg.style.position = 'absolute';
-sausageImg.style.top = '50%';
-sausageImg.style.left = '50%';
-sausageImg.style.transform = 'translate(-50%, -50%)';
-sausageImg.style.zIndex = '3'
+// sausageImg.src = './pizza-assets/sausage.png';
+// sausageImg.style.position = 'absolute';
+// sausageImg.style.top = '50%';
+// sausageImg.style.left = '50%';
+// sausageImg.style.transform = 'translate(-50%, -50%)';
+// sausageImg.style.zIndex = '3'
 
 let pepperImg = document.createElement('img')
-pepperImg.src = './pizza-assets/pepper.png';
-pepperImg.style.position = 'absolute';
-pepperImg.style.top = '50%';
-pepperImg.style.left = '50%';
-pepperImg.style.transform = 'translate(-50%, -50%)';
-pepperImg.style.zIndex = '3'
+// pepperImg.src = './pizza-assets/pepper.png';
+// pepperImg.style.position = 'absolute';
+// pepperImg.style.top = '50%';
+// pepperImg.style.left = '50%';
+// pepperImg.style.transform = 'translate(-50%, -50%)';
+// pepperImg.style.zIndex = '3'
 
 let garlicImg = document.createElement('img')
-garlicImg.src = './pizza-assets/garlic.png';
-garlicImg.style.position = 'absolute';
-garlicImg.style.top = '50%';
-garlicImg.style.left = '50%';
-garlicImg.style.transform = 'translate(-50%, -50%)';
-garlicImg.style.zIndex = '3'
+// garlicImg.src = './pizza-assets/garlic.png';
+// garlicImg.style.position = 'absolute';
+// garlicImg.style.top = '50%';
+// garlicImg.style.left = '50%';
+// garlicImg.style.transform = 'translate(-50%, -50%)';
+// garlicImg.style.zIndex = '3'
 
 let onionImg = document.createElement('img')
-onionImg.src = './pizza-assets/onion.png';
-onionImg.style.position = 'absolute';
-onionImg.style.top = '50%';
-onionImg.style.left = '50%';
-onionImg.style.transform = 'translate(-50%, -50%)';
-onionImg.style.zIndex = '3'
+// onionImg.src = './pizza-assets/onion.png';
+// onionImg.style.position = 'absolute';
+// onionImg.style.top = '50%';
+// onionImg.style.left = '50%';
+// onionImg.style.transform = 'translate(-50%, -50%)';
+// onionImg.style.zIndex = '3'
 
 let tomatoImg = document.createElement('img')
-tomatoImg.src = './pizza-assets/tomato.png';
-tomatoImg.style.position = 'absolute';
-tomatoImg.style.top = '50%';
-tomatoImg.style.left = '50%';
-tomatoImg.style.transform = 'translate(-50%, -50%)';
-tomatoImg.style.zIndex = '3'
+// tomatoImg.src = './pizza-assets/tomato.png';
+// tomatoImg.style.position = 'absolute';
+// tomatoImg.style.top = '50%';
+// tomatoImg.style.left = '50%';
+// tomatoImg.style.transform = 'translate(-50%, -50%)';
+// tomatoImg.style.zIndex = '3'
 
 let basilImg = document.createElement('img')
-basilImg.src = './pizza-assets/basil.png';
-basilImg.style.position = 'absolute';
-basilImg.style.top = '50%';
-basilImg.style.left = '50%';
-basilImg.style.transform = 'translate(-50%, -50%)';
-basilImg.style.zIndex = '3'
+// basilImg.src = './pizza-assets/basil.png';
+// basilImg.style.position = 'absolute';
+// basilImg.style.top = '50%';
+// basilImg.style.left = '50%';
+// basilImg.style.transform = 'translate(-50%, -50%)';
+// basilImg.style.zIndex = '3'
 
 let baconImg = document.createElement('img')
-baconImg.src = './pizza-assets/bacon.png';
-baconImg.style.position = 'absolute';
-baconImg.style.top = '50%';
-baconImg.style.left = '50%';
-baconImg.style.transform = 'translate(-50%, -50%)';
-baconImg.style.zIndex = '3'
+// baconImg.src = './pizza-assets/bacon.png';
+// baconImg.style.position = 'absolute';
+// baconImg.style.top = '50%';
+// baconImg.style.left = '50%';
+// baconImg.style.transform = 'translate(-50%, -50%)';
+// baconImg.style.zIndex = '3'
 
 let hamImg = document.createElement('img')
-hamImg.src = './pizza-assets/ham.png';
-hamImg.style.position = 'absolute';
-hamImg.style.top = '50%';
-hamImg.style.left = '50%';
-hamImg.style.transform = 'translate(-50%, -50%)';
-hamImg.style.zIndex = '3'
+// hamImg.src = './pizza-assets/ham.png';
+// hamImg.style.position = 'absolute';
+// hamImg.style.top = '50%';
+// hamImg.style.left = '50%';
+// hamImg.style.transform = 'translate(-50%, -50%)';
+// hamImg.style.zIndex = '3'
 
 let mushroomImg = document.createElement('img')
-mushroomImg.src = './pizza-assets/mushroom.png';
-mushroomImg.style.position = 'absolute';
-mushroomImg.style.top = '50%';
-mushroomImg.style.left = '50%';
-mushroomImg.style.transform = 'translate(-50%, -50%)';
-mushroomImg.style.zIndex = '3'
+// mushroomImg.src = './pizza-assets/mushroom.png';
+// mushroomImg.style.position = 'absolute';
+// mushroomImg.style.top = '50%';
+// mushroomImg.style.left = '50%';
+// mushroomImg.style.transform = 'translate(-50%, -50%)';
+// mushroomImg.style.zIndex = '3'
 
 let pineappleImg = document.createElement('img')
-pineappleImg.src = './pizza-assets/pineapple.png';
-pineappleImg.style.position = 'absolute';
-pineappleImg.style.top = '50%';
-pineappleImg.style.left = '50%';
-pineappleImg.style.transform = 'translate(-50%, -50%)';
-pineappleImg.style.zIndex = '3'
+// pineappleImg.src = './pizza-assets/pineapple.png';
+// pineappleImg.style.position = 'absolute';
+// pineappleImg.style.top = '50%';
+// pineappleImg.style.left = '50%';
+// pineappleImg.style.transform = 'translate(-50%, -50%)';
+// pineappleImg.style.zIndex = '3'
 
 let anchoviesImg = document.createElement('img')
-anchoviesImg.src = './pizza-assets/anchovies.png';
-anchoviesImg.style.position = 'absolute';
-anchoviesImg.style.top = '50%';
-anchoviesImg.style.left = '50%';
-anchoviesImg.style.transform = 'translate(-50%, -50%)';
-anchoviesImg.style.zIndex = '3'
+// anchoviesImg.src = './pizza-assets/anchovies.png';
+// anchoviesImg.style.position = 'absolute';
+// anchoviesImg.style.top = '50%';
+// anchoviesImg.style.left = '50%';
+// anchoviesImg.style.transform = 'translate(-50%, -50%)';
+// anchoviesImg.style.zIndex = '3'
 
 
 let playerOneScoreRecap = document.createElement('h2')
@@ -349,8 +349,7 @@ function startGameplayPlayerOne (){
     gameLeft.append(mushroomButton);
     gameRight.append(pineappleButton);
     gameLeft.append(anchovyButton);
-    game.append(pizzaDough);
-    
+    createPizzaImage(pizzaDough, './pizza-assets/dough-base.png', '0');
     game.append(bakeButtonUserOne);
     pizzaArray.sample();
     countdownTimerPlayerOne();
@@ -605,6 +604,19 @@ function playAgain(){
     game.appendChild(form);
 }
 
+// Create Element Functions
+
+function createPizzaImage(ingredientName, imgSrc, zIndex) {
+    // let ingredientName = document.createElement('img');
+    ingredientName.src = imgSrc;
+    ingredientName.style.position = 'absolute';
+    ingredientName.style.top = '50%';
+    ingredientName.style.left = '50%';
+    ingredientName.style.transform = 'translate(-50%, -50%)';
+    ingredientName.style.zIndex = zIndex;
+    game.append(ingredientName);
+}
+
 // Event Listeners
 
 // Event listener on form submit - places player names in top left and right, runs introduction function
@@ -613,7 +625,6 @@ form.addEventListener('submit', function(e){
     playerOneScore.innerHTML = `${playerOne.value}`
     playerTwoScore.innerHTML = `${playerTwo.value}`;
     let playerTwoName = playerTwo.value;
-    console.log('form submitted')
     // game.removeChild(introTitle);
     // game.removeChild(form);
     // game.removeChild(introTitle);
@@ -708,63 +719,63 @@ pineappleButton.addEventListener('click', function(){
 
 function anchovyClick(){
     userArray.push('anchovies');
-    game.append(anchoviesImg)
+    createPizzaImage(anchoviesImg, './pizza-assets/anchovies.png', '3');
 }
 function cheeseClick(){
     userArray.push('cheese');
-    game.append(cheeseImg);
+    createPizzaImage(cheeseImg, './pizza-assets/cheese.png', '2');
 }
 function sauceClick(){
     userArray.push('sauce');
-    game.append(pizzaSauce);
+    createPizzaImage(pizzaSauce, './pizza-assets/sauce.png', '1');
 }
 function pepperoniClick(){
     userArray.push('pepperoni');
-    game.append(pepperoniImg);
+    createPizzaImage(pepperoniImg, './pizza-assets/pepperoni.png', '3');
 }
 function sausageClick(){
     userArray.push('sausage');
-    game.append(sausageImg)
+    createPizzaImage(sausageImg, './pizza-assets/sausage.png', '3');
 }
 function pepperClick(){
     userArray.push('pepper');
-    game.append(pepperImg);
+    createPizzaImage(pepperImg, './pizza-assets/pepper.png', '3');
 }
 function garlicClick(){
     userArray.push('garlic');
-    game.append(garlicImg);
+    createPizzaImage(garlicImg, './pizza-assets/garlic.png', '3');
 }
 function onionClick(){
     userArray.push('onion');
-    game.append(onionImg);
+    createPizzaImage(onionImg, './pizza-assets/onion.png', '3');
 }
 function tomatoClick(){
     userArray.push('tomato');
-    game.append(tomatoImg);
+    createPizzaImage(tomatoImg, './pizza-assets/tomato.png', '3');;
 }
 
 function basilClick(){
     userArray.push('basil');
-    game.append(basilImg);
+    createPizzaImage(basilImg, './pizza-assets/basil.png', '3');
 }
 
 function baconClick(){
     userArray.push('bacon');
-    game.append(baconImg)
+    createPizzaImage(baconImg, './pizza-assets/bacon.png', '3');
 }
 
 function hamClick(){
     userArray.push('ham');
-    game.append(hamImg)
+    createPizzaImage(hamImg, './pizza-assets/ham.png', '3');
 }
 
 function mushroomClick(){
     userArray.push('mushroom');
-    game.append(mushroomImg)
+    createPizzaImage(mushroomImg, './pizza-assets/mushroom.png', '3');
 }
 function pineappleClick(){
     userArray.push('pineapple');
-    game.append(pineappleImg)
+    createPizzaImage(pineappleImg, './pizza-assets/pineapple.png', '3');
 }
 
 

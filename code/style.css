@@ -74,7 +74,12 @@ body {
 
   #game, #game-left, #game-right {
     background-color: #FFCE6E;
+ 
   }
+
+  /* #game-left, #game-right {
+    background-image: 'pizza-background.png';
+  } */
 
   #top-left {
     grid-area: top-left;
@@ -95,12 +100,10 @@ body {
 
   #game-left {
     grid-area: game-left;
-    background-color: #FFCE6E;
   }
 
   main {
     grid-area: game;
-    background-color: #FFCE6E;
     width: 100%;
     height: 450px;
 
@@ -108,7 +111,6 @@ body {
 
   #game-right {
     grid-area: game-right;
-    background-color: #FFCE6E;
   }
 
   
@@ -116,7 +118,6 @@ body {
     grid-area: btm-left;
 
   }
-  
   
   #btm-center {
     grid-area: btm-center;
