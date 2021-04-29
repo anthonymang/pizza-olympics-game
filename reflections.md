@@ -18,9 +18,9 @@
 - [x] What did you achieve yesterday?
 - [x] What are your goals for today?
 - [x] Do you have any blockers?
-1. RESPONSE
-2. RESPONSE
-3. RESPONSE
+1. Yesterday I made my pizza assets to make the game look nice. reorganized my gameplay screen to include an interactive pizza show up depending on buttons pressed. Full 2 player gameplay is now active with proper styling.
+2. Goals for today - create play again functionality. Re-factor my code with functions to create elements instead of creating each manually. Re-write instructions copy for better clarity. Fix background color in game margins. Update icons for bacon, basil, cheese, and garlic
+3. Still not sure exactly what is wrong with my current play again function.
 
 # Thursday
 - [x] What did you achieve yesterday?
