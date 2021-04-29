@@ -599,8 +599,8 @@ function playAgain(){
     playerTwo.value = '';
     playerTwoScore.innerText = '';
     playerTwoCurrentScore = 0;
-    game.remove(endGameMessage);
-    game.remove(playAgainButton);
+    game.removeChild(endGameMessage);
+    game.removeChild(playAgainButton);
     game.appendChild(introTitle);
     game.appendChild(form);
 }
