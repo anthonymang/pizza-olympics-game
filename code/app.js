@@ -779,7 +779,7 @@ let pepperoni = ['cheese', 'pepperoni', 'sauce'];
 
 let sausagePeppers = ['cheese', 'pepper', 'sauce', 'sausage'];
 
-let breathmint = ['cheese', 'garlic', 'onion', 'anchovies', 'sauce'];
+let breathmint = ['anchovies', 'cheese', 'garlic', 'onion', 'sauce'];
 
 let margherita  = ['basil', 'cheese', 'garlic', 'sauce', 'tomato'];
 
@@ -794,3 +794,5 @@ let vegan = ['basil', 'mushroom', 'onion', 'pepper', 'sauce',  'tomato']
 let hawaiian = ['cheese', 'ham', 'pineapple', 'sauce']
 
 let pizzaArray = [cheese, pepperoni, sausagePeppers, breathmint, margherita, meatLovers, veggie, white, vegan, hawaiian];
+
+console.log(userArray);
