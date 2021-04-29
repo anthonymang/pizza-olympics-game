@@ -87,7 +87,7 @@ instructHeader.innerHTML = "Instructions";
 
 let gameInstructions = document.createElement('p');
 gameInstructions.setAttribute('class', 'game-text');
-gameInstructions.innerHTML = "Welcome to the Pizza Olympics. In today's game, two Pizza Chefs will square off to make as many pizzas as they can in one minute. Every pizza's ingredients and toppings must match the recipe exactly. Press the corresponding ingredient button to add it to the pizza. When your pizza has all the right toppings, hit the deliver button to submit it for Pizza Olympic inspection. If the pizza is the correct recipe, it will be added to your total tally. But be careful, chefs. If you mess up a pizza you will have to start the recipe from scratch. The Pizza Chef who makes the most pizzas in one minute will be crowned champion. When you're ready to start, click the button below.";
+gameInstructions.innerHTML = "In today's challenge, you will be making pizzas suggested by our expert pizza judges. Look out for the Pizza Name and Ingredient List at the bottom of your screen.  Every pizza's ingredients must match the recipe exactly. Click the corresponding ingredient button to add it to the pizza. When your pizza is ready, click 'Bake' to submit it for judgement. If the pizza is the correct recipe, you will receive one point. If you mess up, you will have to start again with a new pizza. The Pizza Chef who makes the most pizzas in one minute will be crowned champion.";
 
 let playerOneScoreRecap = document.createElement('h2')
 playerOneScoreRecap.setAttribute('class', 'game-text')
@@ -184,22 +184,14 @@ function timeLower(){
 // Callback function for set Timeout - clear interval timer, remove buttons, add text and new buttons
 function timesUpPlayerOne (){
     clearInterval(myTimer);
-    gameLeft.removeChild(anchovyButton);
-    gameRight.removeChild(cheeseButton);
-    gameLeft.removeChild(sauceButton);
-    gameRight.removeChild(pepperoniButton);
-    gameLeft.removeChild(sausageButton);
-    gameRight.removeChild(pepperButton);
-    gameLeft.removeChild(garlicButton);
-    gameRight.removeChild(onionButton);
-    gameLeft.removeChild(tomatoButton);
-    gameRight.removeChild(basilButton);
-    gameLeft.removeChild(baconButton);
-    gameRight.removeChild(hamButton);
-    gameLeft.removeChild(mushroomButton);
-    gameRight.removeChild(pineappleButton);
     while (game.firstChild){
         game.removeChild(game.lastChild);
+    }
+    while (gameLeft.firstChild){
+        gameLeft.removeChild(gameLeft.lastChild);
+    }
+    while (gameRight.firstChild){
+        gameRight.removeChild(gameRight.lastChild);
     }
     
     pizzaType.innerText = '';
@@ -221,22 +213,14 @@ function countdownTimerPlayerTwo(){
 // Callback function for set Timeout - clear interval timer, remove buttons, add text and new buttons
 function timesUpPlayerTwo (){
     clearInterval(myTimer);
-    gameLeft.removeChild(anchovyButton);
-    gameRight.removeChild(cheeseButton);
-    gameLeft.removeChild(sauceButton);
-    gameRight.removeChild(pepperoniButton);
-    gameLeft.removeChild(sausageButton);
-    gameRight.removeChild(pepperButton);
-    gameLeft.removeChild(garlicButton);
-    gameRight.removeChild(onionButton);
-    gameLeft.removeChild(tomatoButton);
-    gameRight.removeChild(basilButton);
-    gameLeft.removeChild(baconButton);
-    gameRight.removeChild(hamButton);
-    gameLeft.removeChild(mushroomButton);
-    gameRight.removeChild(pineappleButton);
     while (game.firstChild){
         game.removeChild(game.lastChild);
+    }
+    while (gameLeft.firstChild){
+        gameLeft.removeChild(gameLeft.lastChild);
+    }
+    while (gameRight.firstChild){
+        gameRight.removeChild(gameRight.lastChild);
     }
     
     pizzaType.innerText = '';
