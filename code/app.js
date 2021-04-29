@@ -95,6 +95,10 @@ playerOneScoreRecap.setAttribute('class', 'game-text')
 let endGameMessage = document.createElement('h2');
 endGameMessage.setAttribute('class', 'game-text')
 
+let woohoo = new Audio('mario-woohoo.wav');
+let oof = new Audio('mario-oof.wav');
+let tarantella = new Audio ('tarantella.m4a')
+
 
 // HELPER FUNCTIONS
 
@@ -106,11 +110,13 @@ function instructionSequence (){
     game.append(instructHeader);
     game.append(gameInstructions);
     game.append(startGameUserOne);
+    tarantella.play();
 
 }
 
 // Start Gameplay for Player One - Remove instructions & start button, put in gameplay buttons
 function startGameplayPlayerOne (){
+    tarantella.pause();
     game.removeChild(instructHeader);
     game.removeChild(gameInstructions);
     game.removeChild(startGameUserOne)
@@ -248,6 +254,7 @@ function playerOneBake() {
     compareArray = userArray.sort();
     if (compareArray.length === randPizza.length && compareArray.every(function(value, index) { return value === randPizza[index]})
     ){
+        woohoo.play();
         playerOneCurrentScore++;
         playerOneScore.innerHTML = `${playerOne.value}<br>Pizzas: ${playerOneCurrentScore}`;        
         pizzaType.innerText = '';
@@ -258,11 +265,13 @@ function playerOneBake() {
         randPizza =[];
 
     } else {
+        oof.play();
         pizzaType.innerText = ':('
         ingredientList.innerHTML = "Sorry, that's the wrong pizza.<br>Try again"
         setTimeout(PizzaReset, 1500)
         userArray = [];
         compareArray = [];
+        
     }
     while (game.firstChild){
         game.removeChild(game.lastChild);
@@ -276,7 +285,8 @@ function playerOneBake() {
 function playerTwoBake() {
     compareArray = userArray.sort();
     if (compareArray.length === randPizza.length && compareArray.every(function(value, index) { return value === randPizza[index]})
-    ){
+    ){  
+        woohoo.play();
         playerTwoCurrentScore++;
         playerTwoScore.innerHTML = `${playerTwo.value}<br>Pizzas: ${playerTwoCurrentScore}`;
         pizzaType.innerText = '';
@@ -287,6 +297,7 @@ function playerTwoBake() {
         randPizza =[];
 
     } else {
+        oof.play();
         pizzaType.innerText = ':('
         ingredientList.innerHTML = "Sorry, that's the wrong pizza.<br>Try again"
         setTimeout(PizzaReset, 1500)
@@ -349,6 +360,7 @@ function playAgain(){
     playerTwo.value = '';
     playerTwoScore.innerText = '';
     playerTwoCurrentScore = 0;
+    timeRemaining = 60;
     game.removeChild(endGameMessage);
     game.removeChild(playAgainButton);
     game.appendChild(introTitle);
