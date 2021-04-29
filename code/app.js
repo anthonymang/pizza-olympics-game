@@ -259,7 +259,7 @@ function playerOneBake() {
 
     } else {
         pizzaType.innerText = ':('
-        ingredientList.innerText = "Sorry, that's the wrong pizza. Try again"
+        ingredientList.innerHTML = "Sorry, that's the wrong pizza.<br>Try again"
         setTimeout(PizzaReset, 1500)
         userArray = [];
         compareArray = [];
@@ -288,7 +288,7 @@ function playerTwoBake() {
 
     } else {
         pizzaType.innerText = ':('
-        ingredientList.innerText = "Sorry, that's the wrong pizza. Try again"
+        ingredientList.innerHTML = "Sorry, that's the wrong pizza.<br>Try again"
         setTimeout(PizzaReset, 1500)
         userArray = [];
         compareArray = [];
