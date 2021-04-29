@@ -65,6 +65,7 @@ bakeButtonUserTwo.innerHTML = 'Bake';
 // Pizza Images
 
 let pizzaDough = document.createElement('img')
+pizzaDough.style.borderRadius = '10px';
 let pizzaSauce = document.createElement('img')
 let cheeseImg = document.createElement('img')
 let pepperoniImg = document.createElement('img')
