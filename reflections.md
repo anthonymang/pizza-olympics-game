@@ -38,3 +38,8 @@
 2. RESPONSE
 3. RESPONSE
 
+# Final Reflections
+1. What HTML, CSS, and or JavaScript skills you learned while building your game?
+- I used while loops in practice for the first time, mastered DOM appending and removing, learned CSS Z-Index, and got a better handle on relative vs absolute positioning.
+2 What's one topic you want to spend more practice on?
+- I want to get better at responsive design and generally getting more fluent in using CSS to structure pages.
